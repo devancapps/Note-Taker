@@ -22,12 +22,12 @@ The Note Taker Application is a web-based note-taking tool that allows users to 
 - Simple and intuitive user interface.
 
 ## Technologies Used
--Express.js
--Node.js
--HTML
--CSS
--JavaScript
--uuid for generating unique IDs
+Express.js
+Node.js
+HTML
+CSS
+JavaScript
+uuid for generating unique IDs
 
 ## Getting Started
 
