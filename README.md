@@ -2,6 +2,10 @@
 
 The Note Taker Application is a web-based note-taking tool that allows users to write, save, and manage notes. It provides a simple and easy-to-use interface for organizing thoughts and keeping track of tasks.
 
+## Screenshots
+![Screenshot 2023-11-01 at 11 19 10 PM](https://github.com/devancapps/Note-Taker/assets/145359970/46f3607c-c534-4216-b6bd-57cb71848795)
+
+
 ## Table of Contents
 
 - [Features](#features)
