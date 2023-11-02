@@ -21,6 +21,15 @@ app.get('/', (req, res) => {
 });
 
 
+// GET /api/notes (Read and return saved notes as JSON)
+app.get('/api/notes', (req, res) => {
+  const notes = JSON.parse(fs.readFileSync(path.join(__dirname, 'db.json')));
+  res.json(notes);
+});
+
+
+
+
 app.listen(PORT, () => {
   console.log(`App listening on http://localhost:${PORT}`);
 });
