@@ -10,24 +10,24 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('public'));
 
-// GET /notes (Return the notes.html file)
+// Return the notes.html file
 app.get('/notes', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'notes.html'));
 });
 
-// GET * (Return the index.html file)
+// Return the index.html file
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 
-// GET /api/notes (Read and return saved notes as JSON)
+// Read and return saved notes as JSON
 app.get('/api/notes', (req, res) => {
   const notes = JSON.parse(fs.readFileSync(path.join(__dirname, 'db.json')));
   res.json(notes);
 });
 
-// POST /api/notes (Receive and save new notes)
+// Receive and save new notes
 app.post('/api/notes', (req, res) => {
   const newNote = req.body;
   newNote.id = uuid.v4();
@@ -38,7 +38,7 @@ app.post('/api/notes', (req, res) => {
   res.json(newNote);
 });
 
-// DELETE /api/notes/:id (Delete a specific note by ID)
+// Delete a specific note by ID
 app.delete('/api/notes/:id', (req, res) => {
   const idToDelete = req.params.id;
   const notes = JSON.parse(fs.readFileSync(path.join(__dirname, 'db.json')));
