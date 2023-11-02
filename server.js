@@ -27,6 +27,17 @@ app.get('/api/notes', (req, res) => {
   res.json(notes);
 });
 
+// POST /api/notes (Receive and save new notes)
+app.post('/api/notes', (req, res) => {
+  const newNote = req.body;
+  newNote.id = uuid.v4();
+
+  const notes = JSON.parse(fs.readFileSync(path.join(__dirname, 'db.json')));
+  notes.push(newNote);
+  fs.writeFileSync(path.join(__dirname, 'db.json'), JSON.stringify(notes));
+  res.json(newNote);
+});
+
 
 
 
