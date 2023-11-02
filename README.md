@@ -33,6 +33,9 @@ The Note Taker Application is a web-based note-taking tool that allows users to 
 * JavaScript
 * uuid for generating unique IDs
 
+## License 
+This project is licensed under the MIT License - see the LICENSE file for details.
+
 ## Getting Started
 
 To get the Note Taker Application up and running on your local machine, follow these steps:
