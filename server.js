@@ -38,7 +38,14 @@ app.post('/api/notes', (req, res) => {
   res.json(newNote);
 });
 
-
+// DELETE /api/notes/:id (Delete a specific note by ID)
+app.delete('/api/notes/:id', (req, res) => {
+  const idToDelete = req.params.id;
+  const notes = JSON.parse(fs.readFileSync(path.join(__dirname, 'db.json')));
+  const updatedNotes = notes.filter((note) => note.id !== idToDelete);
+  fs.writeFileSync(path.join(__dirname, 'db.json'), JSON.stringify(updatedNotes));
+  res.json({ message: 'Note deleted successfully' });
+});
 
 
 app.listen(PORT, () => {
